@@ -1,0 +1,17 @@
+== README
+
+Spiked implementation of an analytics collector to be used with the man-tracker-client library.
+The client posts to localhost:3000/events with something like the following:
+
+Processing by EventsController#create as */*
+Parameters: {"man_tracker"=>"{\"account_id\":\"123243434\"}"}
+
+and the collector stores each call into the events table along with the request headers.
+
+Next step would be:
+
+* firstly adding tests, and proceeding from hereon with TDD.
+* use a json store for all the headers.  This could be a postgres json store, elasticsearch, mongo db, etc.
+* add an analytics dashboard where clients can log in as see their stats ala GA
+* said dashboard shows graphs created with d3
+* if elasticsearch is used, the dashboard can be kibana
